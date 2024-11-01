@@ -10,7 +10,7 @@ lyricsgenius
 motor
 pillow==10.3.0
 psutil
-py-tgcalls==2.0.3
+py-tgcalls==0.9.7
 pykeyboard
 git+https://github.com/doraemon890/pyrogram
 python-dotenv
