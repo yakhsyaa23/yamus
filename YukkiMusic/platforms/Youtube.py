@@ -10,6 +10,7 @@
 import asyncio
 import os
 import re
+import json
 from typing import Union
 
 import aiohttp
@@ -21,6 +22,21 @@ import config
 from YukkiMusic.utils.database import is_on_off
 from YukkiMusic.utils.formatters import time_to_seconds
 
+import os
+import glob
+import random
+import logging
+
+def cookie_txt_file():
+    folder_path = f"{os.getcwd()}/cookies"
+    filename = f"{os.getcwd()}/cookies/logs.csv"
+    txt_files = glob.glob(os.path.join(folder_path, '*.txt'))
+    if not txt_files:
+        raise FileNotFoundError("No .txt files found in the specified folder.")
+    cookie_txt_file = random.choice(txt_files)
+    with open(filename, 'a') as file:
+        file.write(f'Choosen File : {cookie_txt_file}\n')
+    return f"""cookies/{str(cookie_txt_file).split("/")[-1]}"""
 
 async def shell_cmd(cmd):
     proc = await asyncio.create_subprocess_shell(
@@ -148,6 +164,7 @@ class YouTubeAPI:
             link = link.split("&")[0]
         proc = await asyncio.create_subprocess_exec(
             "yt-dlp",
+            "--cookies", cookie_txt_file(),
             "-g",
             "-f",
             "best[height<=?720][width<=?1280]",
@@ -169,7 +186,7 @@ class YouTubeAPI:
         if "&" in link:
             link = link.split("&")[0]
         playlist = await shell_cmd(
-            f"yt-dlp -i --get-id --flat-playlist --playlist-end {limit} --skip-download {link}"
+            f"yt-dlp -i --get-id --flat-playlist --cookies {cookie_txt_file()} --playlist-end {limit} --skip-download {link}"
         )
         try:
             result = playlist.split("\n")
@@ -368,6 +385,7 @@ class YouTubeAPI:
             else:
                 proc = await asyncio.create_subprocess_exec(
                     "yt-dlp",
+                    "--cookies", cookie_txt_file(),
                     "-g",
                     "-f",
                     "best[height<=?720][width<=?1280]",
