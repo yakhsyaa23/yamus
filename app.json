@@ -57,11 +57,7 @@
             "value": "",
             "required": true
         },
-        "MUSIC_BOT_NAME": {
-            "description": "Your OpenAI GPT API key.",
-            "value": "",
-            "required": true
-        },
+        
     "buildpacks": [
         {
             "url": "heroku/python"
