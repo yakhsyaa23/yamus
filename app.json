@@ -57,6 +57,7 @@
             "value": "",
             "required": true
         },
+    },
         
     "buildpacks": [
         {
