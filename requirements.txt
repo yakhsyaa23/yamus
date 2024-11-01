@@ -12,7 +12,7 @@ pillow==10.3.0
 psutil
 py-tgcalls==2.0.3
 pykeyboard
-git+https://github.com/doraemon890/pyrogram
+pyrogram==1.4.16
 python-dotenv
 pyyaml==6.0.1
 requests
