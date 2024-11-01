@@ -1,6 +1,6 @@
 {
-    "name": "ANNIE X MUSIC",
-    "description": "ANNIE X MUSIC is a Telegram Music Player Bot built using Python, leveraging Pyrogram and Py-Tgcalls for seamless music streaming.",
+    "name": "Yasa X Yukki",
+    "description": "Yasa X Yukki is a Telegram Music Player Bot built using Python, leveraging Pyrogram and Py-Tgcalls for seamless music streaming.",
     "logo": "https://telegra.ph/file/2c6d1a6f78eba6199933a.jpg",
     "keywords": [
         "python3",
@@ -57,8 +57,11 @@
             "value": "",
             "required": true
         },
-    },
-        
+        "MUSIC_BOT_NAME": {
+            "description": "Music Bot Name.",
+            "value": "",
+            "required": false
+        },
     "buildpacks": [
         {
             "url": "heroku/python"
@@ -71,4 +74,4 @@
         }
     ],
     "stack": "container"
-}
+    }
