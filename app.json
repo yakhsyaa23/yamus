@@ -6,8 +6,8 @@
         "python3",
         "telegram",
         "bot",
-        "Jarvis",
-        "MusicBot",
+        "Yukki",
+        "YukkiMusicBot",
         "telegram-bot",
         "pyrogram"
     ],
@@ -57,17 +57,11 @@
             "value": "",
             "required": true
         },
-        "GPT_API": {
+        "MUSIC_BOT_NAME": {
             "description": "Your OpenAI GPT API key.",
             "value": "",
             "required": false
         },
-        "DEEP_API": {
-            "description": "Your DEEP API key from https://deepai.org/",
-            "value": "",
-            "required": false
-        }
-    },
     "buildpacks": [
         {
             "url": "heroku/python"
