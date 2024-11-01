@@ -60,7 +60,7 @@
         "MUSIC_BOT_NAME": {
             "description": "Your OpenAI GPT API key.",
             "value": "",
-            "required": false
+            "required": true
         },
     "buildpacks": [
         {
